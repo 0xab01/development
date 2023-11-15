@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+        :root {
+            --main-color: #062B3D;
+            --red: #e74c3c;
+            --orange: #040302;
+            --light-color: #888;
+            --light-bg: #eee;
+            --black: #2c3e50;
+            --white: #fff;
+            --border: .1rem solid rgba(0, 0, 0, .2);
+          }
+          
+          body.welcome {
+            background-color: var(--light-bg);
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            margin: 0; /* Remove default margin */
+          }
+          
+          header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--light-bg);
+            z-index: 1000;
+          }
+          
+          nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: var(--light-bg);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+          }
+          
+          nav a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 1rem;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+          }
+          
+          nav a:hover {
+            color: var(--main-color);
+          }
+          
+          header #dashboard-btn {
+            background-color: var(--main-color);
+            color: var(--white);
+            font-size: 1.6rem;
+            padding: 0.7rem 3rem;
+            border-radius: 0.3rem;
+            text-decoration: none;
+            border-radius: 6px;
+          }
+          
+          #vo {
+            color: var(--main-color);
+          }
+          
+          header #dashboard-btn:hover {
+            background-color: var(--black);
+          }
+          
+          /* New styles for the button */
+          header #right-button {
+            margin-left: auto;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--main-color);
+            color: var(--white);
+            font-size: 1.6rem;
+            border-radius: 0.3rem;
+            text-decoration: none;
+            border-radius: 6px;
+          }
+          
+          /* Removed styles for the last h1 element */
+          body.welcome > h1 {
+            font-size: 1.5rem;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+          }
+          
+          .welcome-section {
+            text-align: center;
+            padding: 6rem 2rem;
+            width: 100%;
+            max-width: 800px;
+            box-sizing: border-box;
+            margin-top: 2rem;
+            position: relative;
+          }
+          
+          /* Add a background layer using ::before pseudo-element */
+          .welcome-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('your-background.svg') top center no-repeat;
+            background-size: cover;
+            z-index: -1;
+          }
+          
+          .welcome-section h1 {
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+          }
+          
+          .welcome-section p {
+            font-size: 1.8rem;
+            color: var(--light-color);
+            margin-bottom: 2rem;
+          }
+          
+          .welcome-section .cta-btn {
+            background-color: var(--main-color);
+            color: var(--white);
+            display: inline-block;
+            font-size: 1.8rem;
+            padding: 1rem 3rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s ease;
+          }
+          
+          .welcome-section .cta-btn:hover {
+            background-color: var(--black);
+          }
+          
+          /* Styles for the footer */
+          footer {
+            background: #000;
+            padding: 30px 0px;
+            font-family: 'Play', sans-serif;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+          }
+          
+          .footer .row {
+            width: 100%;
+            margin: 1% 0%;
+            padding: 0.6% 0%;
+            color: gray;
+            font-size: 0.8em;
+          }
+          
+          .footer .row a {
+            text-decoration: none;
+            color: gray;
+            transition: 0.5s;
+          }
+          
+          .footer .row a:hover {
+            color: #fff;
+          }
+          
+          .footer .row ul {
+            width: 100%;
+          }
+          
+          .footer .row ul li {
+            display: inline-block;
+            margin: 0px 30px;
+            text-align: left;
+          }
+          
+          .footer .row a i {
+            font-size: 2em;
+            margin: 0% 1%;
+          }
+          
+          @media (max-width: 1200px) {
+            /* Adjust styles for screens up to 1200px width */
+            .welcome-section {
+              padding: 4rem 2rem;
+            }
+          }
+
+          @media (max-width: 720px) {
+            /* Adjust styles for screens up to 720px width */
+            .welcome-section {
+              padding: 3rem 1rem;
+            }
+            .footer {
+              text-align: left;
+              padding: 5%;
+            }
+            .footer .row ul li {
+              display: block;
+              margin: 10px 0px;
+              text-align: left;
+            }
+            .footer .row a i {
+              margin: 0% 3%;
+            }
+          }
+          
+    </style>
+</head>
+<body class="welcome">
+
+   <header>
+      <!-- Removed the logo -->
+      <!-- New button at the right side -->
+      <a href="home.html" id="right-button">Dashboard</a>
+   </header>
+
+   <nav>
+       <a href="#section1">Section 1</a>
+       <a href="#section2">Section 2</a>
+       <a href="#section3">Section 3</a>
+   </nav>
+
+   <section class="welcome-section">
+      <h1>Discover the World Of Modern Learning With <span id="vo">VortexTutors</span></h1>
+      <p>Empowering your learning journey with personalized education.</p>
+   </section>
+
+   <!-- Removed the unwanted h1 element styling -->
+   <h1>gedg</h1>
+
+   <!-- Your existing footer content goes here -->
+   <!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<footer>
+<div class="footer">
+<div class="row">
+<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+<a href="#"><i class="fa fa-instagram"></i></a>
+<a href="#"><i class="fa fa-youtube"></i></a>
+
+</div>
+
+<div class="row">
+<ul>
+<li><a href="#">Contact us</a></li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Career</a></li>
+</ul>
+</div>
+
+<div class="row">
+ Copyright ©2031 VortexTutors - All rights reserved.
+</div>
+</div>
+</footer>
+
+
+</body>
+</html>
